@@ -78,8 +78,11 @@ def create_acc_accel_control(packer, bus, acc_type, acc_enabled, accel, acc_cont
   values = {
     "ACS_Sta_ADR": acc_control,
     "ACS_StSt_Info": acc_enabled,
-    "ACS_Typ_ACC": acc_type,
-    "ACS_Anhaltewunsch": acc_type == 1 and stopping,
+    # Foxy edit removed the following two lines
+    # "ACS_Typ_ACC": acc_type,
+    # "ACS_Anhaltewunsch": acc_type == 1 and stopping,
+    # added next line:
+    "ACS_Typ_ACC": 0,
     "ACS_FreigSollB": acc_enabled,
     "ACS_Sollbeschl": accel if acc_enabled else 3.01,
     "ACS_zul_Regelabw": 0.2 if acc_enabled else 1.27,
