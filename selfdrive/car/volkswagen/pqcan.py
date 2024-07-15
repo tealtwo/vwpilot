@@ -79,10 +79,11 @@ def create_acc_accel_control(packer, bus, acc_type, acc_enabled, accel, acc_cont
     "ACS_Sta_ADR": acc_control,
     "ACS_StSt_Info": acc_enabled,
     # Foxy edit removed the following two lines
+    # Teal: commented out Anhaltewunsch to disable OP Long from faulting temporarily while we look into mAWV
     # "ACS_Typ_ACC": acc_type,
     # "ACS_Anhaltewunsch": acc_type == 1 and stopping,
     # added next line:
-    "ACS_Anhaltewunsch": stopping,
+    # "ACS_Anhaltewunsch": stopping,
     "ACS_FreigSollB": acc_enabled,
     "ACS_Sollbeschl": accel if acc_enabled else 3.01,
     "ACS_zul_Regelabw": 0.2 if acc_enabled else 1.27,
